@@ -7,6 +7,7 @@ module.exports = {
       filename: '[name][contenthash].js',
       clean: true,
    },
+   mode: 'development',
    resolve: {
       extensions: ['.js']
    },
@@ -34,7 +35,14 @@ module.exports = {
       new htmlWebPackPlugin({
          injet:true,
          template: path.resolve(__dirname,'public/index.html'),
-         filename: './index[contenthash].html'
+         filename: './index.html'
       })
-   ]
+   ],
+   devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      historyApiFallback: true,
+      port: 3000,
+      open:true
+   },
 };

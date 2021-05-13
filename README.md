@@ -17,7 +17,14 @@ Directorio De Paises
     git clone git@github.com:edex-13/Directorio-De-Paises.git
     cd Directorio-De-Paises
     ```
-    Ya tienes el proyecto ❤
+2. **Ejecutar el proyecto.**
+    ```sh
+    npm start
+    ```
+    **Si el navegador no abre automaticamente:**
+    El sitio estará disponible en http://localhost:3000.
+
+## Ya tienes el proyecto ❤
 --------
 
 Proyecto hecho con el unico objetivo de aprender 😎
