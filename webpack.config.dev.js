@@ -10,6 +10,7 @@ module.exports = {
       clean: true,
    },
    mode: 'development',
+   watch: true,
    resolve: {
       extensions: ['.js'],
    },
