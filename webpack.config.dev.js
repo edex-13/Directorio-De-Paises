@@ -43,6 +43,17 @@ module.exports = {
                'css-loader',
             ],
          },
+         {
+            test: /\.woff$/,
+            use: [
+               {
+                  loader: 'file-loader',
+                  options: {
+                     name: 'assets/fonts/[name][contenthash].[ext]',
+                  },
+               },
+            ],
+         },
       ],
    },
    plugins: [

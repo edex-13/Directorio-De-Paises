@@ -1,5 +1,13 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url(../assets/fonts/poppins-regular.woff)
+	format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
 *{
     margin: 0;
     padding: 0;
     background-color: aqua;
+    font-family: 'Poppins';
 }
