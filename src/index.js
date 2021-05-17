@@ -1,2 +1,4 @@
 import './styles/main.css'
-console.log("Hola :)")
+import router from './routes/router'
+window.addEventListener('load', router)
+
