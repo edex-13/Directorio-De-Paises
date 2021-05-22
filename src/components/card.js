@@ -1,42 +1,57 @@
-class countryCard extends HTMLElement{
-    constructor(){
-        super();
-        this.attachShadow({mode:'open'});
-    }
-    connectedCallback(){
-        this.render()
-    }
-    getTemplate(){
-        const template = document.createElement('template');
-        template.innerHTML = `
-            <div class="card">
-            <img src="https://restcountries.eu/data/afg.svg" alt="Bandera " class="img-fluid">
+class countryCard extends HTMLElement {
+   constructor() {
+      super();
+      this.attachShadow({mode: 'open'});
+   }
+   static get observedAttributes() {
+      return ['img', 'name_country', 'population', 'region', 'capital'];
+   }
+
+   connectedCallback() {
+      this.render();
+   }
+
+   attributeChangedCallback(attribute, oldAtribute, newAtribute) {
+      this[attribute] = newAtribute;
+   }
+   getTemplate() {
+      const template = document.createElement('template');
+      let a = this.name_country.toLocaleLowerCase().replace(/ /g, '');
+      template.innerHTML = `
+      <a href="/#/${a}">
+         <div class="card">
+            <img src=${this.img} alt=${this.name_country} class="img-fluid">
                 <div class="card-content">
-                    <h2>Name</h2>
+                    <h2>${this.name_country}</h2>
                     <p>
                         Population:
-                        
+                        ${this.population}
                     </p>
                     <p>
                         Region: 
-                        
+                        ${this.region}
                     </p>
                     <p>
                         Capital:
-                        
+                        ${this.capital}
                     </p>
                 </div>
             </div>
+      </a>
             ${this.getStyles()}
-        `
-        return template
-    }
-    getStyles(){
-        return `
+        `;
+      return template;
+   }
+   getStyles() {
+      return `
         <style>
+        a{
+   text-decoration: none;
+}
             .card{
                 background-color: rgba(255, 255, 255, 0.1);
                 width:270px;
+                height: 390px;
                 margin:20px;
                 overflow: hidden;
                 border-radius:5px;
@@ -49,11 +64,11 @@ class countryCard extends HTMLElement{
                 width:100%;
             }
         </style>
-        `
-    }
-    render(){
-        this.shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
-    }
-    
+        `;
+   }
+   render() {
+      this.itIsRendered = true;
+      this.shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
+   }
 }
-customElements.define('country-card', countryCard)
+customElements.define('country-card', countryCard);
