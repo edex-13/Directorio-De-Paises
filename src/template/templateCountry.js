@@ -1,12 +1,15 @@
 import '../components/countryDetails';
-const details = document.getElementById('details');
-const containerCards = document.getElementById('cards');
+
 const templateCard = (countrys) => {
-    const country = countrys[0]
-   containerCards.innerHTML = '';
+   const details = document.getElementById('container');
+   details.classList.remove('cards');
+   details.innerHTML = '';
+   const searh = document.querySelector('.container__search_input');
+   searh.innerHTML = ``;
+   const country = countrys[0];
 
    let card = document.createElement('country-details');
-   console.log(countrys)
+   console.log(countrys);
    attributes(card, 'img', country.flag);
    attributes(card, 'name_country', country.name);
    attributes(card, 'native_name', country.nativeName);
@@ -16,6 +19,7 @@ const templateCard = (countrys) => {
    attributes(card, 'capital', country.capital);
    attributes(card, 'top_level_domain', country.topLevelDomain[0]);
    attributes(card, 'currencies', `${country.currencies[0].code} - ${country.currencies[0].name}`);
+   console.log(card);
    details.append(card);
 };
 

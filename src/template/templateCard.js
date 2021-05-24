@@ -1,7 +1,14 @@
 import '../components/card';
-const containerCards = document.getElementById('cards');
+
+
 const templateCard = (data)=>{
+    const containerCards = document.getElementById('container');
+    containerCards.classList.add('cards')
     containerCards.innerHTML = ''
+    const searh = document.querySelector('.container__search_input')
+    searh.innerHTML = `
+            <input type="text" placeholder="Search for a country..." class="input" />
+            <img src="../src/assets/images/lupa.svg" alt="icon-lupa" class="search__logo" />`
     data.forEach(country => {
         let card = document.createElement('country-card');
         attributes(card , "img", country.flag)

@@ -13,7 +13,6 @@ class countryDetails extends HTMLElement {
 
    attributeChangedCallback(attribute, oldAtribute, newAtribute) {
       this[attribute] = newAtribute;
-      console.log(`${attribute } es ahora ${newAtribute}`)
    }
    getTemplate() {
       const template = document.createElement('template');

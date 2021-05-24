@@ -31,7 +31,7 @@ main {
    
 }
 .container__search_input{
-   	margin: 40px 90px;
+   margin: 40px 90px;
 	width:300px;
 	height:40px;
 	background-color: #282d31;
@@ -55,7 +55,12 @@ main {
    display:flex;
    justify-content: center;
 }
-
+.cards{
+   width: 90%;
+   display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+}
 a{
    text-decoration: none;
 }
