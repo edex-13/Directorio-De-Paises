@@ -54,14 +54,8 @@ main {
 .container__cards{
    display:flex;
    justify-content: center;
-   
 }
-#cards{
-   width: 90%;
-   display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-gap: 20px;
-}
+
 a{
    text-decoration: none;
 }

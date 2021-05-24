@@ -7,13 +7,12 @@ console.log(input);
 const router = async () => {
    let hash = getHash();
    let data = await getData();
-   hash === '/' ? templateCard(data) : templateCountry(data, hash);
+   hash === '/' ? templateCard(data) : uniqueHash(hash);
 
    input.addEventListener('input', (e) => {
-       let value = e.srcElement.value
+      let value = e.srcElement.value
       if (value  == '') {
          templateCard(data);
-         console.log("suu")
       } else {
          filterHash(value);
       }
@@ -24,7 +23,12 @@ const router = async () => {
          return country.name.toLocaleLowerCase().indexOf(hash) == 0;
       });
       templateCard(filteredData);
-      filteredData = null;
+   }
+   function uniqueHash(hash){
+      let filteredData = data.filter((country) => {
+         return country.name.toLocaleLowerCase() == hash;
+      });
+      templateCountry(filteredData);
    }
 };
 
