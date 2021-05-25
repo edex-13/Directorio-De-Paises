@@ -1,4 +1,3 @@
-const getHash = () => 
-    location.hash.slice(1).toLocaleLowerCase().split('/')[1] || '/'
+const getHash = () =>  new URLSearchParams(window.location.search).get('name') || '/'
 
 export default getHash;

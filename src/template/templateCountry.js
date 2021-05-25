@@ -12,7 +12,6 @@ const templateCard = (countrys) => {
 
    const country = countrys[0];
    let card = document.createElement('country-details');
-   console.log(countrys);
    attributes(card, 'img', country.flag);
    attributes(card, 'name_country', country.name);
    attributes(card, 'native_name', country.nativeName);

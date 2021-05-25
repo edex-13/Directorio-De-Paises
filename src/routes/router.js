@@ -18,7 +18,7 @@ const router = async () => {
       let filteredData = data.filter((country) => {
          return country.name.toLocaleLowerCase() == hash;
       });
-      console.log(data)
+      
       templateCountry(filteredData);
    }
    function searh(data) {

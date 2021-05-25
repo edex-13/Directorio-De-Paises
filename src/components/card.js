@@ -18,7 +18,7 @@ class countryCard extends HTMLElement {
       const template = document.createElement('template');
       let a = this.name_country.toLocaleLowerCase().replace(/ /g, '');
       template.innerHTML = `
-      <a href="/#/${a}">
+      <a href="/?name=${this.name_country.toLocaleLowerCase()}">
          <div class="card">
             <img src=${this.img} alt=${this.name_country} class="img-fluid">
                 <div class="card-content">
