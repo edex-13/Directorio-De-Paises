@@ -2,7 +2,7 @@ import getData from '../utils/getData';
 import getHash from '../utils/getHash';
 import templateCard from '../template/templateCard';
 import templateCountry from '../template/templateCountry';
-
+import icon from '../assets/images/lupa.svg'
 const router = async () => {
    let hash = getHash();
    let data = await getData();
@@ -26,7 +26,7 @@ const router = async () => {
       searh.classList.add('container__search_input')
       searh.innerHTML = `
             <input type="text" placeholder="Search for a country..." class="input" />
-            <img src="../src/assets/images/lupa.svg" alt="icon-lupa" class="search__logo" />`;
+            <img src="${icon}" alt="icon-lupa" class="search__logo" />`;
       const input = document.querySelector('.input');
       input.addEventListener('input', (e) => {
          let value = e.srcElement.value;

@@ -53,6 +53,17 @@ module.exports = {
                },
             ],
          },
+         {
+            test: /\.svg$/,
+            use: [
+               {
+                  loader: 'file-loader',
+                  options: {
+                     name: 'assets/images/[name][contenthash].[ext]',
+                  },
+               },
+            ],
+         },
       ]
    },
    plugins:[
