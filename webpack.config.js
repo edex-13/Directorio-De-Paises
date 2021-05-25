@@ -70,7 +70,7 @@ module.exports = {
       new htmlWebPackPlugin({
          injet:true,
          template: path.resolve(__dirname,'public/index.html'),
-         filename: './index[contenthash].html'
+         filename: './index.html'
       }),
       new miniCssExtractPlugin({
          filename: 'styles/[name][contenthash].css',
