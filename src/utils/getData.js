@@ -1,4 +1,4 @@
-const API = 'https://restcountries.eu/rest/v2/all'
+const API = 'https://restcountries.com/v2/all'
 const getData = async () => {
     try{
         const response = await fetch(API);
